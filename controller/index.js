@@ -3,7 +3,8 @@ import { mainfunction } from"./mainfunction.js";
 import { panding } from "./add-todo.js";
 import { complaTeTask,impTasktext } from "./mainfunction.js";
 
-let totaltask = [];
+let totaltask =JSON.parse(localStorage.getItem('task') || "[]");
+    ;
 const taskbtn = document.querySelector('#added');
 const todolist = document.querySelector('ul');
 const srachBtn = document.querySelector('#search');
@@ -11,8 +12,6 @@ const taskdis = document.querySelector('#detail');
 
 
 document.addEventListener('DOMContentLoaded',()=>{
-    totaltask = JSON.parse(localStorage.getItem('task'));
-    
 
     totaltask.forEach(element => {
 
