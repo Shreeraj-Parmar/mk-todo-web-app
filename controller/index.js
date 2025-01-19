@@ -3,15 +3,25 @@ import { mainfunction } from "./mainfunction.js";
 import { panding } from "./add-todo.js";
 import { complaTeTask, impTasktext } from "./mainfunction.js";
 
+<<<<<<< HEAD
 let totaltask = [];
 const taskbtn = document.querySelector("#added");
 const todolist = document.querySelector("ul");
 const srachBtn = document.querySelector("#search");
 const taskdis = document.querySelector("#detail");
+=======
+let totaltask =JSON.parse(localStorage.getItem('task') || "[]");
+    ;
+const taskbtn = document.querySelector('#added');
+const todolist = document.querySelector('ul');
+const srachBtn = document.querySelector('#search');
+const taskdis = document.querySelector('#detail');
+>>>>>>> 675227d57cd54cb6b77400182ca5ab2a125af232
 
 document.addEventListener("DOMContentLoaded", () => {
   totaltask = JSON.parse(localStorage.getItem("task"));
 
+<<<<<<< HEAD
   totaltask.forEach((element) => {
     const taskpera = document.createElement("li");
     const taskdiv = document.createElement("div");
@@ -19,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const delbtn = document.createElement("button");
     const complatebtn = document.createElement("button");
     const importntbtn = document.createElement("button");
+=======
+document.addEventListener('DOMContentLoaded',()=>{
+>>>>>>> 675227d57cd54cb6b77400182ca5ab2a125af232
 
     taskdiv.classList.add("pera");
     taskpera.classList.add("p");
@@ -65,8 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
 taskbtn.addEventListener("click", taskadd);
 todolist.addEventListener("click", mainfunction);
 
+<<<<<<< HEAD
 srachBtn.addEventListener("keyup", () => {
   detail.innerHTML = "";
+=======
+srachBtn.addEventListener('keyup',()=>{
+    detail.innerHTML = "";
+    
+    let findTask = srachBtn.value;
+    
+    const findfilter = totaltask.filter(task => task.task.includes(findTask));
+>>>>>>> 675227d57cd54cb6b77400182ca5ab2a125af232
 
   let findTask = srachBtn.value;
 
@@ -74,6 +96,7 @@ srachBtn.addEventListener("keyup", () => {
     task.task.toLowerCase().includes(findTask)
   );
 
+<<<<<<< HEAD
   findfilter.forEach((element) => {
     const taskpera = document.createElement("li");
     const taskdiv = document.createElement("div");
@@ -108,3 +131,6 @@ srachBtn.addEventListener("keyup", () => {
 });
 
 export { taskbtn, totaltask };
+=======
+export{taskbtn ,totaltask};
+>>>>>>> 675227d57cd54cb6b77400182ca5ab2a125af232
