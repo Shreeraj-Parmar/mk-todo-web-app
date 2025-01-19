@@ -74,7 +74,7 @@ srachBtn.addEventListener('keyup',()=>{
     
     let findTask = srachBtn.value;
     
-    const findfilter = totaltask.filter(task => task.task.toLowerCase().includes(findTask));
+    const findfilter = totaltask.filter(task => task.task.includes(findTask));
 
     findfilter.forEach((element)=>{
         const taskpera = document.createElement('li');
